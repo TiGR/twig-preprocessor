@@ -1,0 +1,25 @@
+{
+    "name": "tigr/twig-preprocessor",
+    "type": "library",
+    "description": "This very simple loader adds a way to pre parse twig files before loading them into twig parser",
+    "authors": [
+        {
+            "name": "Igor Tarasov",
+            "email": "tarasov.igor@gmail.com"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=5.2.7",
+        "twig/twig": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7"
+    },
+    "autoload": {
+        "classmap": [
+            "lib"
+        ]
+    },
+    "minimum-stability": "stable"
+}
