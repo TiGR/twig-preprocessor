@@ -25,7 +25,7 @@
  *
  * @author Igor Tarasov <tarasov.igor@gmail.com>
  */
-class Twig_Loader_Preprocessor implements Twig_LoaderInterface, Twig_ExistsLoaderInterface
+class Twig_Loader_Preprocessor implements Twig_LoaderInterface
 {
     private $realLoader;
     private $callback;
@@ -47,9 +47,13 @@ class Twig_Loader_Preprocessor implements Twig_LoaderInterface, Twig_ExistsLoade
     /**
      * {@inheritdoc}
      */
-    public function getSource($name)
+    public function getSourceContext($name)
     {
-        return call_user_func($this->callback, $this->realLoader->getSource($name));
+        $realSource = $this->realLoader->getSourceContext($name);
+
+        return new Twig_Source(
+            call_user_func($this->callback, $realSource->getCode()), $realSource->getName(), $realSource->getPath()
+        );
     }
 
     /**
@@ -57,20 +61,7 @@ class Twig_Loader_Preprocessor implements Twig_LoaderInterface, Twig_ExistsLoade
      */
     public function exists($name)
     {
-        $name = (string)$name;
-
-        if ($this->realLoader instanceof Twig_ExistsLoaderInterface) {
-            return $this->realLoader->exists($name);
-        } else {
-            try {
-                $this->realLoader->getSource($name);
-
-                return true;
-            } catch (Twig_Error_Loader $e) {
-            }
-        }
-
-        return false;
+        return $this->realLoader->exists((string)$name);
     }
 
     /**

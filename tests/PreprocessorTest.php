@@ -13,29 +13,40 @@ class Twig_Tests_Loader_PreprocessorTest extends PHPUnit_Framework_TestCase
 {
     public function testProcessing()
     {
-        $realLoader = new Twig_Loader_Array(['test' => 'test']);
-        $loader = new Twig_Loader_Preprocessor($realLoader, 'strtoupper');
-        $this->assertEquals('TEST', $loader->getSource('test'));
+        $loader = $this->getLoader();
+
+        $this->assertEquals('TEST', $loader->getSourceContext('test')->getCode());
+        $this->assertEquals('test', $loader->getSourceContext('test')->getName());
+        $this->assertEquals('', $loader->getSourceContext('test')->getPath());
+    }
+
+    private function getLoader(Twig_LoaderInterface $realLoader = null)
+    {
+        if ($realLoader === null) {
+            $realLoader = new Twig_Loader_Array(['test' => 'test']);
+        }
+
+        return new Twig_Loader_Preprocessor($realLoader, 'strtoupper');
     }
 
     public function testExists()
     {
-        $realLoader = $this->getMockBuilder('Twig_Loader_Array')
-            ->setMethods(array('exists', 'getSource'))
-            ->disableOriginalConstructor()
-            ->getMock();
-        $realLoader->expects($this->once())->method('exists')->will($this->returnValue(false));
-        $realLoader->expects($this->never())->method('getSource');
+        $mockedLoader = $this->createMock('Twig_Loader_Filesystem');
+        $mockedLoader->method('exists')->will($this->returnValueMap([['foo', false], ['bar', true]]));
 
-        /** @noinspection PhpParamsInspection */
-        $loader = new Twig_Loader_Preprocessor($realLoader, 'trim');
+        $loader = $this->getLoader($mockedLoader);
+
         $this->assertFalse($loader->exists('foo'));
+        $this->assertTrue($loader->exists('bar'));
+    }
 
-        $realLoader = $this->createMock('Twig_LoaderInterface');
-        $realLoader->expects($this->once())->method('getSource')->will($this->returnValue('content'));
+    public function testIsFresh()
+    {
+        $this->assertEquals(true, $this->getLoader()->isFresh('test', time()));
+    }
 
-        /** @noinspection PhpParamsInspection */
-        $loader = new Twig_Loader_Preprocessor($realLoader, 'trim');
-        $this->assertTrue($loader->exists('foo'));
+    public function testGetCacheKey()
+    {
+        $this->assertEquals('test', $this->getLoader()->getCacheKey('test'));
     }
 }
