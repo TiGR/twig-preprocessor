@@ -56,11 +56,12 @@ $loader = new Twig_Loader_Preprocessor(
         }
         
         return preg_replace($regExp, '$1', $template);
-    });
+    }
+);
 ```
 
 ## History
 
-- [gist code](https://gist.github.com/TiGR/5002699)
-- [Twig issue](https://github.com/twigphp/Twig/issues/1005)
-- [rejected Twig pull request](https://github.com/twigphp/Twig/pull/1508)
+- [Original code in gist](https://gist.github.com/TiGR/5002699).
+- [Twig issue about suggested formatting fix](https://github.com/twigphp/Twig/issues/1005).
+- [Rejected Twig pull request](https://github.com/twigphp/Twig/pull/1508).
