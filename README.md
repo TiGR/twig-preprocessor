@@ -1,6 +1,11 @@
 # Twig Preprocessor Loader
 
 [![Build Status](https://travis-ci.org/TiGR/twig-preprocessor.svg?branch=master)](https://travis-ci.org/TiGR/twig-preprocessor)
+[![For Twig version](https://img.shields.io/badge/twig-%3E%3D%202.0-8892BF.svg)](http://twig.sensiolabs.org/)
+[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.0-8892BF.svg)](https://secure.php.net/)
+[![Total Downloads](https://poser.pugx.org/tigr/twig-preprocessor/downloads)](https://packagist.org/packages/tigr/twig-preprocessor)
+[![Latest Stable Version](https://poser.pugx.org/tigr/twig-preprocessor/v/stable)](https://packagist.org/packages/tigr/twig-preprocessor)
+[![License](https://poser.pugx.org/tigr/twig-preprocessor/license)](https://packagist.org/packages/tigr/twig-preprocessor)
 
 This Twig Preprocessor loader allows you to do custom manipulations with twig templates before passing them to 
 twig parser. This allows you, for instance, to do some substitutions, or format templates to make them look better.
