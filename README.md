@@ -5,6 +5,8 @@
 This Twig Preprocessor loader allows you to do custom manipulations with twig templates before passing them to 
 twig parser. This allows you, for instance, to do some substitutions, or format templates to make them look better.
 
+This branch (master) contains code for Twig 2.x.
+
 ## Installation
 
 Installation via composer (version for twig 2):
