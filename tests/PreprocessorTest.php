@@ -4,7 +4,7 @@ class Twig_Tests_Loader_PreprocessorTest extends PHPUnit_Framework_TestCase
 {
     public function testProcessing()
     {
-        $realLoader = new Twig_Loader_Array(['test' => 'test']);
+        $realLoader = new Twig_Loader_Array(array('test' => 'test'));
         $loader = new Twig_Loader_Preprocessor($realLoader, 'strtoupper');
         $this->assertEquals('TEST', $loader->getSource('test'));
     }
