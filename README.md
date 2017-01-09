@@ -5,15 +5,17 @@
 This Twig Preprocessor loader allows you to do custom manipulations with twig templates before passing them to 
 twig parser. This allows you, for instance, to do some substitutions, or format templates to make them look better.
 
+This branch (`twig1`) contains code compatible with twig 1.x.
+
 ## Installation
 
-Installation via composer (version for twig 2):
-
-    composer install tigr/twig-preprocessor
-
-If you want to use it with twig 1, use version 1:
+Installation via composer (version for twig 1):
 
     composer install tigr/twig-preprocessor "~1.0"
+
+If you want to use it with twig 2, use version 2:
+
+    composer install tigr/twig-preprocessor
 
 ## Usage
 
