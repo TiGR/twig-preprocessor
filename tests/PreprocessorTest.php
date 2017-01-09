@@ -22,7 +22,7 @@ class Twig_Tests_Loader_PreprocessorTest extends PHPUnit_Framework_TestCase
         $loader = new Twig_Loader_Preprocessor($realLoader, 'trim');
         $this->assertFalse($loader->exists('foo'));
 
-        $realLoader = $this->createMock('Twig_LoaderInterface');
+        $realLoader = $this->getMock('Twig_LoaderInterface');
         $realLoader->expects($this->once())->method('getSource')->will($this->returnValue('content'));
 
         /** @noinspection PhpParamsInspection */
