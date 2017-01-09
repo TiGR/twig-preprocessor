@@ -1,6 +1,6 @@
 # Twig Preprocessor Loader
 
-[![Build Status](https://travis-ci.org/TiGR/twig-preprocessor.svg?branch=master)](https://travis-ci.org/TiGR/twig-preprocessor)
+[![Build Status](https://travis-ci.org/TiGR/twig-preprocessor.svg?branch=twig1)](https://travis-ci.org/TiGR/twig-preprocessor)
 
 This Twig Preprocessor loader allows you to do custom manipulations with twig templates before passing them to 
 twig parser. This allows you, for instance, to do some substitutions, or format templates to make them look better.
