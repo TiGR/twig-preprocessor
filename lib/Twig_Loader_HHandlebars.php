@@ -1,5 +1,7 @@
 <?php
 
+namespace Roxburghm\TwigHHandlebars;
+
 /**
  * Twig Hhandlebars loader that allows use of {{{ }}} and {{{{ }}}}.
  **
