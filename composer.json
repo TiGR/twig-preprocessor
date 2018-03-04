@@ -1,11 +1,10 @@
 {
     "name": "roxburghm/twig-hhandlebars",
     "type": "library",
-    "description": "A twig preprocessing loader converts {{{ }}} to {{ }}",
+    "description": "A twig preprocessing loader that converts {{{ }}} to {{ }} allowing twig template of VueJS etc",
     "authors": [
         {
             "name": "Matt Roxburgh",
-            "email": "roxburghm+github@gmail.com"
         }
     ],
     "license": "MIT",
