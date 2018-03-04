@@ -20,7 +20,6 @@
         "classmap": [
             "lib"
         ]
-    }
-// ,
-//    "minimum-stability": "stable"
+    },
+    "minimum-stability": "stable"
 }
