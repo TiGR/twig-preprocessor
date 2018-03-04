@@ -6,22 +6,22 @@ This Twig Preprocessor, originally based on [https://github.com/TiGR/twig-prepro
 
 This allows you to mix twig and other handlebar delimited code, eg VueJS or handlebars.js, in the same template.
 
-This branch (master) contains code for Twig 2.x.
+This branch (master) contains code for Twig 1.x.
 
 ## Installation
 
-Installation via composer (version for twig 2):
+Installation via composer (version for twig 1):
 
     composer install roxburghm/twig-hhandlebars
 
 ## Usage
 
-Intantiate a the HHandlebars template loader and pass it to Twig.
+Intantiate the Filesystem HHandlebars Loader and pass that to Twig.
 
 Intantiate Twig
 
 ```php
-$realLoader = Twig_Loader_HHandlebars_Filesystem('/path/to/templates');
+$Loader = Twig_Loader_Filesystem_HHandlebars('/path/to/templates');
 $twig = new Twig_Environment($loader);
 ```
 
