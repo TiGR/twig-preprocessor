@@ -1,6 +1,8 @@
 # Twig H-Handlebars
 
-This Twig Preprocessor, heavilit based on [https://github.com/TiGR/twig-preprocessor] allows you to use {{{ }}} handlebars in a twig template which are rendered out in the final twig as {{ '{{' }} and {{ '}}' }}.
+_Pun: H-Handlebars, extra H because of extra curly brace._
+
+This Twig Preprocessor, heavily based on [https://github.com/TiGR/twig-preprocessor] allows you to use {{{ }}} handlebars in a twig template which are rendered out in the final twig as {{ '{{' }} and {{ '}}' }}.
 
 This allows you to mix twig and other handlebar delimited code, eg VueJS or handlebars.js, in the same template.
 
@@ -10,7 +12,7 @@ This branch (master) contains code for Twig 2.x.
 
 Installation via composer (version for twig 2):
 
-    composer install roxburgh/twig-hhandlebars
+    composer install roxburghm/twig-hhandlebars
 
 ## Usage
 
