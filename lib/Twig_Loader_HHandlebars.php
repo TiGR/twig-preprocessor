@@ -9,7 +9,7 @@ namespace Roxburghm\TwigHHandlebars;
  *
  * @author Matt Roxburgh
  */
-class Twig_Loader_HHandlebars implements Twig_LoaderInterface
+class Twig_Loader_HHandlebars implements \Twig_LoaderInterface
 {
     private $realLoader;
 
