@@ -1,5 +1,7 @@
 <?php
 
+use Twig\Loader\LoaderInterface;
+
 /**
  * Twig Preprocessor loader that allows adding custom text filters for template strings.
  *
@@ -16,7 +18,7 @@
  *
  * @author Igor Tarasov <tarasov.igor@gmail.com>
  */
-class Twig_Loader_Preprocessor implements Twig_LoaderInterface
+class Twig_Loader_Preprocessor implements LoaderInterface
 {
     private $realLoader;
     private $callback;
@@ -29,7 +31,7 @@ class Twig_Loader_Preprocessor implements Twig_LoaderInterface
      * @param Twig_LoaderInterface $loader A loader that does real loading of templates
      * @param callable $callback The processing callback
      */
-    public function __construct(Twig_LoaderInterface $loader, $callback)
+    public function __construct(LoaderInterface $loader, $callback)
     {
         $this->realLoader = $loader;
         $this->callback = $callback;
