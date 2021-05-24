@@ -1,6 +1,7 @@
 <?php
 
 use Twig\Loader\LoaderInterface;
+use Twig\Source;
 
 /**
  * Twig Preprocessor loader that allows adding custom text filters for template strings.
@@ -40,11 +41,11 @@ class Twig_Loader_Preprocessor implements LoaderInterface
     /**
      * {@inheritdoc}
      */
-    public function getSourceContext($name)
+    public function getSourceContext(string $name): Source
     {
         $realSource = $this->realLoader->getSourceContext($name);
 
-        return new Twig_Source(
+        return new Source(
             call_user_func($this->callback, $realSource->getCode()), $realSource->getName(), $realSource->getPath()
         );
     }
@@ -52,7 +53,7 @@ class Twig_Loader_Preprocessor implements LoaderInterface
     /**
      * {@inheritdoc}
      */
-    public function exists($name)
+    public function exists(string $name)
     {
         return $this->realLoader->exists((string)$name);
     }
@@ -60,7 +61,7 @@ class Twig_Loader_Preprocessor implements LoaderInterface
     /**
      * {@inheritdoc}
      */
-    public function getCacheKey($name)
+    public function getCacheKey(string $name): string
     {
         return $this->realLoader->getCacheKey($name);
     }
@@ -68,7 +69,7 @@ class Twig_Loader_Preprocessor implements LoaderInterface
     /**
      * {@inheritdoc}
      */
-    public function isFresh($name, $time)
+    public function isFresh(string $name, int $time): bool
     {
         return $this->realLoader->isFresh($name, $time);
     }
