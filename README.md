@@ -16,11 +16,11 @@ This branch (master) contains code for Twig 2.x.
 
 Installation via composer (version for twig 2):
 
-    composer install tigr/twig-preprocessor
+    composer require tigr/twig-preprocessor
 
 If you want to use it with twig 1, use version 1:
 
-    composer install tigr/twig-preprocessor "~1.0"
+    composer require tigr/twig-preprocessor "~1.0"
 
 ## Usage
 
